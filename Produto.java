@@ -133,4 +133,78 @@ public abstract class Produto {
             System.out.println("Marca: " + marca);
         }
     }
+
+    public static void adicionarProduto(Produto produto) { // Método que adiciona um produto à lista de produtos
+        produtos.add(produto); // Adiciona o produto à lista
+        System.out.println("Produto adicionado: " + produto.getClass().getSimpleName()); // Informa qual tipo de produto foi adicionado
+    }
+
+    public static void removerProduto(Produto produto) { // Método que remove um produto da lista de produtos
+        if (produtos.remove(produto)) { // Tenta remover o produto da lista
+            System.out.println("Produto removido: " + produto.getClass().getSimpleName()); // Informa qual tipo de produto foi removido
+        } else {
+            System.out.println("Produto não encontrado."); // Informa se o produto não foi encontrado na lista
+        }
+    }
+
+    public static void listarProdutos() { // Método que lista todos os produtos da lista
+        for (Produto produto : produtos) { // Itera sobre cada produto na lista
+            produto.mostrarDetalhes(); // Exibe os detalhes do produto
+            System.out.println("---------"); // Separa os produtos com um divisor para melhor legibilidade
+        }
+    }
+    
+    public static void gerarRelatorioEstoque() { // Método que gera um relatório de estoque
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("relatorio_estoque.txt"))) { 
+            // Tenta abrir um arquivo para escrita e usa BufferedWriter para escrever eficientemente
+            for (Produto produto : produtos) { // Itera sobre todos os produtos na lista
+                writer.write("Produto: " + produto.getClass().getSimpleName() + "\n"); // Escreve o tipo de produto no arquivo
+                writer.write("Estoque: " + produto.getEstoque() + "\n"); // Escreve o estoque do produto no arquivo
+                writer.write("---------\n"); // Adiciona um divisor para separar os registros
+            }
+            System.out.println("Relatório de estoque gerado com sucesso."); // Informa que o relatório foi gerado com sucesso
+        } catch (IOException e) { // Captura e trata qualquer exceção de IO que possa ocorrer
+            System.out.println("Erro ao gerar relatório: " + e.getMessage()); // Informa se ocorreu um erro ao gerar o relatório
+        }
+    }
+    
+    public static void atualizarEstoque(String arquivoCSV) { // Método que atualiza o estoque com base em um arquivo CSV
+        try (BufferedReader reader = new BufferedReader(new FileReader(arquivoCSV))) { 
+            // Tenta abrir o arquivo CSV para leitura
+            String linha;
+            while ((linha = reader.readLine()) != null) { // Lê cada linha do arquivo CSV
+                String[] dados = linha.split(","); // Divide a linha em partes usando a vírgula como separador
+                String lote = dados[0]; // Obtém o lote do produto
+                int novoEstoque = Integer.parseInt(dados[1]); // Converte o valor de estoque para um inteiro
+
+                for (Produto produto : produtos) { // Itera sobre os produtos para encontrar o produto correspondente ao lote
+                    if (produto.getLote().equals(lote)) { // Compara o lote do produto
+                        produto.setEstoque(novoEstoque); // Atualiza o estoque do produto
+                        break; // Encerra o loop ao encontrar o produto correto
+                    }
+                }
+            }
+            System.out.println("Estoque atualizado com sucesso."); // Informa que o estoque foi atualizado com sucesso
+        } catch (IOException e) { // Captura e trata qualquer exceção de IO que possa ocorrer
+            System.out.println("Erro ao atualizar estoque: " + e.getMessage()); // Informa se ocorreu um erro ao atualizar o estoque
+        }
+    }
+
+    // Método para aplicar mudança de preço com valor fixo
+    public void mudancaDePreco(double valor) {
+        this.preco += valor;
+        System.out.println("Preço atualizado para: " + preco);
+    }
+
+    // Método para aplicar mudança de preço com porcentagem
+    public void mudancaDePreco(double porcentagem, boolean aumentar) {
+        if (aumentar) {
+            this.preco += this.preco * (porcentagem / 100);
+        } else {
+            this.preco -= this.preco * (porcentagem / 100);
+        }
+        System.out.println("Preço atualizado para: " + preco);
+    }
+    
+    
 }
