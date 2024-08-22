@@ -2,17 +2,17 @@ package com.minhaempresa.loja; // Eu declaro o pacote para organizar a classe de
 
 // Aqui eu defino a classe abstrata Pessoa, que serve como base para outras classes como Cliente, Funcionário, etc.
 public abstract class Pessoa {
-    private String cpf; // Este é o atributo que armazena o CPF da pessoa
-    private String nome; // Aqui eu guardo o nome da pessoa
-    private Date dataDeNascimento; // A data de nascimento da pessoa é armazenada neste atributo
-    private String telefone; // O telefone da pessoa é mantido neste atributo
+    private String cpf;
+    private String nome; 
+    private Date dataDeNascimento; 
+    private String telefone; 
 
     // Este é o construtor da classe Pessoa, onde eu inicializo os atributos quando um objeto é criado
     public Pessoa(String cpf, String nome, Date dataDeNascimento, String telefone) {
-        this.cpf = cpf; // Inicializo o CPF da pessoa
-        this.nome = nome; // Inicializo o nome da pessoa
-        this.dataDeNascimento = dataDeNascimento; // Inicializo a data de nascimento da pessoa
-        this.telefone = telefone; // Inicializo o telefone da pessoa
+        this.cpf = cpf;
+        this.nome = nome;
+        this.dataDeNascimento = dataDeNascimento;
+        this.telefone = telefone;
     }
 
     // Aqui eu defino um método abstrato que será implementado pelas subclasses
@@ -200,12 +200,12 @@ class Atendente extends Funcionario {
 
 // Classe Gerente estende Funcionario
 class Gerente extends Funcionario {
-    private String setor; // Eu armazeno o setor do gerente aqui
+    private String setor;
 
     // Eu crio o construtor da classe Gerente, que chama o construtor da superclasse Funcionario
     public Gerente(String cpf, String nome, Date dataDeNascimento, String telefone, String email, Date dataDeContratacao, double salario, String setor) {
         super(cpf, nome, dataDeNascimento, telefone, email, dataDeContratacao, salario); // Chamo o construtor da superclasse
-        this.setor = setor; // Inicializo o setor do gerente
+        this.setor = setor;
     }
 
     // Implementação do método abstrato mostrarDetalhes
