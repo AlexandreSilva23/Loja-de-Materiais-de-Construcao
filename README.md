@@ -1,4 +1,4 @@
-# Loja-de-Materiais-de-Constru-o
+# Loja-de-Materiais-de-Construcao
 
 `Encapsulamento:` Os atributos são privados e acessíveis apenas por meio de métodos públicos (getters e setters).
 
