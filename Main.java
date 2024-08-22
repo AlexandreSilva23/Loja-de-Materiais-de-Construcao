@@ -15,7 +15,7 @@ public class Main { // Classe principal que contém o método main, ponto de ent
     public static void main(String[] args) { // Método principal onde a execução do programa começa
         List<Cliente> clientes = new ArrayList<>();
 
-        // Aqui criei uma pequena base de dados apenas para testes e debugs, coloquei 20 produtos em cada setor (Materiais, Tintas & Ferramentas)       
+        // Aqui apenas criei uma pequena base de dados para testes e debugs...      
         adicionarProduto(new Produto.Materiais(25.50, "58V25LB", new Date(), 100, "Cimento CP II", 50.0, 25.0, 10.0, 10.0));
         adicionarProduto(new Produto.Materiais(12.99, "58V26LB", new Date(), 200, "Areia Fina", 100.0, 0.0, 0.0, 0.0));
         adicionarProduto(new Produto.Materiais(17.90, "58V27LB", new Date(), 150, "Brita 1", 100.0, 0.0, 0.0, 0.0));
