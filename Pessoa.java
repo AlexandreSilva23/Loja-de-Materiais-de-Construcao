@@ -20,35 +20,35 @@ public abstract class Pessoa {
 
     // Métodos getters e setters, que permitem acessar e modificar os atributos da pessoa
     public String getCpf() {
-        return cpf; // Eu retorno o CPF da pessoa
+        return cpf;
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf; // Eu atualizo o CPF da pessoa
+        this.cpf = cpf;
     }
 
     public String getNome() {
-        return nome; // Eu retorno o nome da pessoa
+        return nome;
     }
 
     public void setNome(String nome) {
-        this.nome = nome; // Eu atualizo o nome da pessoa
+        this.nome = nome;
     }
 
     public Date getDataDeNascimento() {
-        return dataDeNascimento; // Eu retorno a data de nascimento da pessoa
+        return dataDeNascimento;
     }
 
     public void setDataDeNascimento(Date dataDeNascimento) {
-        this.dataDeNascimento = dataDeNascimento; // Eu atualizo a data de nascimento da pessoa
+        this.dataDeNascimento = dataDeNascimento;
     }
 
     public String getTelefone() {
-        return telefone; // Eu retorno o telefone da pessoa
+        return telefone;
     }
 
     public void setTelefone(String telefone) {
-        this.telefone = telefone; // Eu atualizo o telefone da pessoa
+        this.telefone = telefone;
     }
 }
 
@@ -63,8 +63,8 @@ class Cliente extends Pessoa {
     // Eu crio o construtor da classe Cliente, que chama o construtor da superclasse Pessoa
     public Cliente(String cpf, String nome, Date dataDeNascimento, String telefone, String endereco, String email) {
         super(cpf, nome, dataDeNascimento, telefone); // Chamo o construtor da superclasse
-        this.endereco = endereco; // Inicializo o endereço do cliente
-        this.email = email; // Inicializo o email do cliente
+        this.endereco = endereco; 
+        this.email = email; 
         this.compras = new ArrayList<>(); // Inicializa a lista de compras
     }
 
@@ -95,34 +95,34 @@ class Cliente extends Pessoa {
 
     // Getters e setters para endereço e email
     public String getEndereco() {
-        return endereco; // Eu retorno o endereço do cliente
+        return endereco;
     }
 
     public void setEndereco(String endereco) {
-        this.endereco = endereco; // Eu atualizo o endereço do cliente
+        this.endereco = endereco;
     }
 
     public String getEmail() {
-        return email; // Eu retorno o email do cliente
+        return email;
     }
 
     public void setEmail(String email) {
-        this.email = email; // Eu atualizo o email do cliente
+        this.email = email;
     }
 }
 
 // Classe Funcionario estende Pessoa
 class Funcionario extends Pessoa {
-    private String email; // Eu armazeno o email do funcionário aqui
-    private Date dataDeContratacao; // Aqui eu guardo a data de contratação do funcionário
-    private double salario; // Eu armazeno o salário do funcionário aqui
+    private String email; 
+    private Date dataDeContratacao; 
+    private double salario; 
 
     // Eu crio o construtor da classe Funcionario, que chama o construtor da superclasse Pessoa
     public Funcionario(String cpf, String nome, Date dataDeNascimento, String telefone, String email, Date dataDeContratacao, double salario) {
         super(cpf, nome, dataDeNascimento, telefone); // Chamo o construtor da superclasse
-        this.email = email; // Inicializo o email do funcionário
-        this.dataDeContratacao = dataDeContratacao; // Inicializo a data de contratação do funcionário
-        this.salario = salario; // Inicializo o salário do funcionário
+        this.email = email; 
+        this.dataDeContratacao = dataDeContratacao; 
+        this.salario = salario; 
     }
 
     // Implementação do método abstrato mostrarDetalhes
@@ -140,38 +140,38 @@ class Funcionario extends Pessoa {
 
     // Getters e setters para email, dataDeContratacao e salario
     public String getEmail() {
-        return email; // Eu retorno o email do funcionário
+        return email; 
     }
 
     public void setEmail(String email) {
-        this.email = email; // Eu atualizo o email do funcionário
+        this.email = email; 
     }
 
     public Date getDataDeContratacao() {
-        return dataDeContratacao; // Eu retorno a data de contratação do funcionário
+        return dataDeContratacao; 
     }
 
     public void setDataDeContratacao(Date dataDeContratacao) {
-        this.dataDeContratacao = dataDeContratacao; // Eu atualizo a data de contratação do funcionário
+        this.dataDeContratacao = dataDeContratacao; 
     }
 
     public double getSalario() {
-        return salario; // Eu retorno o salário do funcionário
+        return salario; 
     }
 
     public void setSalario(double salario) {
-        this.salario = salario; // Eu atualizo o salário do funcionário
+        this.salario = salario; 
     }
 }
 
 // Classe Atendente estende Funcionario
 class Atendente extends Funcionario {
-    private int numeroDeVendas; // Eu armazeno o número de vendas do atendente aqui
+    private int numeroDeVendas; 
 
     // Eu crio o construtor da classe Atendente, que chama o construtor da superclasse Funcionario
     public Atendente(String cpf, String nome, Date dataDeNascimento, String telefone, String email, Date dataDeContratacao, double salario, int numeroDeVendas) {
         super(cpf, nome, dataDeNascimento, telefone, email, dataDeContratacao, salario); // Chamo o construtor da superclasse
-        this.numeroDeVendas = numeroDeVendas; // Inicializo o número de vendas do atendente
+        this.numeroDeVendas = numeroDeVendas;
     }
 
     // Implementação do método abstrato mostrarDetalhes
@@ -190,11 +190,11 @@ class Atendente extends Funcionario {
 
     // Getters e setters para numeroDeVendas
     public int getNumeroDeVendas() {
-        return numeroDeVendas; // Eu retorno o número de vendas do atendente
+        return numeroDeVendas; 
     }
 
     public void setNumeroDeVendas(int numeroDeVendas) {
-        this.numeroDeVendas = numeroDeVendas; // Eu atualizo o número de vendas do atendente
+        this.numeroDeVendas = numeroDeVendas;
     }
 }
 
@@ -224,10 +224,10 @@ class Gerente extends Funcionario {
 
     // Getters e setters para setor
     public String getSetor() {
-        return setor; // Eu retorno o setor do gerente
+        return setor; 
     }
 
     public void setSetor(String setor) {
-        this.setor = setor; // Eu atualizo o setor do gerente
+        this.setor = setor; 
     }
 }
