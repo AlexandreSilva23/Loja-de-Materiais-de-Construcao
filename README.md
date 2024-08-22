@@ -6,4 +6,6 @@ Herança: Classes como Cliente, Funcionario, Atendente, Gerente, Materiais, Tint
 
 Polimorfismo: Métodos como mostrarDetalhes() são sobrescritos em subclasses para fornecer implementações específicas,  utilizam a mesma assinatura mas são implementadas de maneira diferente para cada classe.
 
+Sobrescrita e Sobrecarga de Métodos: o método mudancaDePreco() é sobrecarregado para aceitar tanto um valor fixo quanto uma porcentagem e um booleano para determinar o tipo de ajuste dentro da superclasse Produto. Cada uma dessas subclasses (Materiais, Tintas, e Ferramentas) está sobrescrevendo o método mostrarDetalhes da superclasse Produto. Isso significa que, quando o método mostrarDetalhes() é chamado em um objeto de uma dessas subclasses, a versão sobrescrita específica daquela subclasse será executada, ao invés da versão da superclasse.
+
 Coleções: Uma lista (List<Produto> produtos) é usada para gerenciar as compras de forma dinâmica dentro da classe Cliente.
