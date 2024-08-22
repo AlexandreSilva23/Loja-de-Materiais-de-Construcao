@@ -96,8 +96,8 @@ public abstract class Produto {
 
     // Aqui eu defino a classe Tintas, que estende Produto
     public static class Tintas extends Produto {
-        private double volume; // Eu armazeno o volume da tinta aqui
-        private String aspecto; // Eu armazeno o tipo de aspecto da tinta aqui
+        private double volume; 
+        private String aspecto; 
 
         // Eu crio o construtor da classe Tintas, que chama o construtor da superclasse Produto
         public Tintas(double preco, String lote, Date dataDeRecepcao, int estoque, String descricao, double volume, String aspecto) {
@@ -122,12 +122,12 @@ public abstract class Produto {
 
     // Aqui eu defino a classe Ferramentas, que estende Produto
     public static class Ferramentas extends Produto {
-        private String marca; // Eu armazeno a marca da ferramenta aqui
+        private String marca; 
 
         // Eu crio o construtor da classe Ferramentas, que chama o construtor da superclasse Produto
         public Ferramentas(double preco, String lote, Date dataDeRecepcao, int estoque, String descricao, String marca) {
             super(preco, lote, dataDeRecepcao, estoque); // Chamo o construtor da superclasse
-            this.marca = marca; // Inicializo a marca da ferramenta
+            this.marca = marca; 
         }
 
         // Implementação do método abstrato mostrarDetalhes
