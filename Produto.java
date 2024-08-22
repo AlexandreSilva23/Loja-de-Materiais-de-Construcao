@@ -4,17 +4,18 @@ import java.util.Date; // Importação da classe Date para manipulação de data
 
 // Aqui eu defino a classe abstrata Produto, que serve como base para diferentes tipos de produtos
 public abstract class Produto {
-    private double preco; // Eu armazeno o preço do produto aqui
-    private String lote; // Eu armazeno o lote do produto aqui
-    private Date dataDeRecepcao; // Eu armazeno a data de recepção do produto aqui
-    private int estoque; // Eu armazeno a quantidade de estoque do produto aqui
+    private double preco;
+    private String lote;
+    private String descricao; 
+    private Date dataDeRecepcao; 
+    private int estoque; 
 
-    // Eu crio o construtor da classe Produto, que inicializa os atributos quando um objeto é criado
-    public Produto(double preco, String lote, Date dataDeRecepcao, int estoque) {
-        this.preco = preco; // Inicializo o preço do produto
-        this.lote = lote; // Inicializo o lote do produto
-        this.dataDeRecepcao = dataDeRecepcao; // Inicializo a data de recepção do produto
-        this.estoque = estoque; // Inicializo a quantidade de estoque do produto
+    // Crio o construtor da classe Produto, que inicializa os atributos quando um objeto é criado
+    public Produto(double preco, String lote, Date dataDeRecepcao, String descricao, int estoque) {
+        this.preco = preco;
+        this.lote = lote; 
+        this.dataDeRecepcao = dataDeRecepcao; 
+        this.estoque = estoque;
     }
 
     // Este é o método abstrato mostrarDetalhes, que será implementado pelas subclasses
@@ -22,57 +23,65 @@ public abstract class Produto {
 
     // Métodos getters e setters que permitem acessar e modificar os atributos do produto
     public double getPreco() {
-        return preco; // Eu retorno o preço do produto
+        return preco;
     }
 
     public void setPreco(double preco) {
-        this.preco = preco; // Eu atualizo o preço do produto
+        this.preco = preco;
     }
 
     public String getLote() {
-        return lote; // Eu retorno o lote do produto
+        return lote;
     }
 
     public void setLote(String lote) {
-        this.lote = lote; // Eu atualizo o lote do produto
+        this.lote = lote;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+    
     public Date getDataDeRecepcao() {
-        return dataDeRecepcao; // Eu retorno a data de recepção do produto
+        return dataDeRecepcao;
     }
 
     public void setDataDeRecepcao(Date dataDeRecepcao) {
-        this.dataDeRecepcao = dataDeRecepcao; // Eu atualizo a data de recepção do produto
+        this.dataDeRecepcao = dataDeRecepcao; 
     }
 
     public int getEstoque() {
-        return estoque; // Eu retorno a quantidade de estoque do produto
+        return estoque;
     }
 
     public void setEstoque(int estoque) {
-        this.estoque = estoque; // Eu atualizo a quantidade de estoque do produto
+        this.estoque = estoque;
     }
 
     // Aqui eu defino a classe Materiais, que estende Produto
     public static class Materiais extends Produto {
-        private double peso; // Eu armazeno o peso do material aqui
-        private double comprimento; // Eu armazeno o comprimento do material aqui
-        private double largura; // Eu armazeno a largura do material aqui
-        private double altura; // Eu armazeno a altura do material aqui
+        private double peso;
+        private double comprimento; 
+        private double largura; 
+        private double altura; 
 
         // Eu crio o construtor da classe Materiais, que chama o construtor da superclasse Produto
         public Materiais(double preco, String lote, Date dataDeRecepcao, int estoque, String descricao, double peso, double comprimento, double largura, double altura) {
             super(preco, lote, dataDeRecepcao, estoque); // Chamo o construtor da superclasse
-            this.peso = peso; // Inicializo o peso do material
-            this.comprimento = comprimento; // Inicializo o comprimento do material
-            this.largura = largura; // Inicializo a largura do material
-            this.altura = altura; // Inicializo a altura do material
+            this.peso = peso;
+            this.comprimento = comprimento;
+            this.largura = largura; 
+            this.altura = altura; 
         }
 
         // Implementação do método abstrato mostrarDetalhes
         @Override
         public void mostrarDetalhes() {
-            // Aqui eu exibo os detalhes do material
+            // Aqui eu exibo os detalhes do material, ele 
             System.out.println("Material:");
             System.out.println("Preço: R$" + getPreco());
             System.out.println("Lote: " + getLote());
@@ -93,8 +102,8 @@ public abstract class Produto {
         // Eu crio o construtor da classe Tintas, que chama o construtor da superclasse Produto
         public Tintas(double preco, String lote, Date dataDeRecepcao, int estoque, String descricao, double volume, String aspecto) {
             super(preco, lote, dataDeRecepcao, estoque); // Chamo o construtor da superclasse
-            this.volume = volume; // Inicializo o volume da tinta
-            this.aspecto = aspecto; // Inicializo o aspecto da tinta
+            this.volume = volume; 
+            this.aspecto = aspecto; 
         }
 
         // Implementação do método abstrato mostrarDetalhes
@@ -206,7 +215,5 @@ public abstract class Produto {
             this.preco -= this.preco * (porcentagem / 100);
         }
         System.out.println("Preço atualizado para: " + preco);
-    }
-    
-    
+    }   
 }
