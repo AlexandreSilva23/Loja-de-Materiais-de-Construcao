@@ -58,14 +58,29 @@ public abstract class Pessoa {
 class Cliente extends Pessoa {
     private String endereco; // Eu armazeno o endereço do cliente aqui
     private String email; // Aqui eu guardo o email do cliente
-
+    private List<Produto> compras; // Coleção de produtos comprados
+    
     // Eu crio o construtor da classe Cliente, que chama o construtor da superclasse Pessoa
     public Cliente(String cpf, String nome, Date dataDeNascimento, String telefone, String endereco, String email) {
         super(cpf, nome, dataDeNascimento, telefone); // Chamo o construtor da superclasse
         this.endereco = endereco; // Inicializo o endereço do cliente
         this.email = email; // Inicializo o email do cliente
+        this.compras = new ArrayList<>(); // Inicializa a lista de compras
     }
 
+    // Métodos para manipular a coleção de compras
+        public void adicionarCompra(Produto produto) {
+            compras.add(produto);
+        }
+
+        public void removerCompra(Produto produto) {
+            compras.remove(produto);
+        }
+
+        public List<Produto> getCompras() {
+            return compras;
+        }
+    
     // Implementação do método abstrato mostrarDetalhes
     @Override
     public void mostrarDetalhes() {
