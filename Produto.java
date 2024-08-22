@@ -187,8 +187,10 @@ public abstract class Produto {
             System.out.println("Estoque atualizado com sucesso."); // Informa que o estoque foi atualizado com sucesso
         } catch (IOException e) { // Captura e trata qualquer exceção de IO que possa ocorrer
             System.out.println("Erro ao atualizar estoque: " + e.getMessage()); // Informa se ocorreu um erro ao atualizar o estoque
-        }
-    }
+        } catch (NumberFormatException e) {
+        System.err.println("Erro ao formatar número no arquivo: " + e.getMessage());
+    }    
+    
 
     // Método para aplicar mudança de preço com valor fixo
     public void mudancaDePreco(double valor) {
