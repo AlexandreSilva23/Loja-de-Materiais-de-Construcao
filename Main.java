@@ -9,10 +9,10 @@ import java.util.ArrayList; // Importação da classe para criar listas dinâmic
 import java.util.Date; // Importação da classe para manipulação de datas
 import java.util.List; // Importação da interface que define listas
 
-public class Main { // Classe principal que contém o método main, ponto de entrada do programa
+public class Main { 
     private static List<Produto> produtos = new ArrayList<>(); // Lista estática que armazena os produtos da loja
     
-    public static void main(String[] args) { // Método principal onde a execução do programa começa
+    public static void main(String[] args) {
         List<Cliente> clientes = new ArrayList<>();
 
         // Aqui apenas criei uma pequena base de dados para testes e debugs...      
